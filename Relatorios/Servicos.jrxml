@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Servicos" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="759845f6-8f48-4d33-9091-24099867d738">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[select
+OSER.os,data_os,tipo,equipamento,problema,tecnico,situacao,prioridade,valor,
+CLI.nomecli,fonecli
+from tbos as OSER
+inner join tbclientes as CLI
+on (CLI.idcli = OSER.idcli);]]>
+	</queryString>
+	<field name="os" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="data_os" class="java.sql.Timestamp">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tipo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="equipamento" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="problema" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tecnico" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="situacao" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="prioridade" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="valor" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nomecli" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fonecli" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<group name="os">
+		<groupExpression><![CDATA[$F{os}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="38" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="165" height="38" uuid="e9451cef-ca70-4694-825e-283cd3950100"/>
+				<textElement>
+					<font fontName="Century Gothic" size="28"/>
+				</textElement>
+				<text><![CDATA[Serviços]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="441" y="0" width="100" height="20" uuid="08d19cd9-cdbb-4ed7-bbaf-a1c4cf76bdf2"/>
+				<textElement>
+					<font fontName="Arial" size="13"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="25" height="20" uuid="b0b69184-4344-49f0-8f3b-119f59ef9ac7"/>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font fontName="Century Gothic" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[OS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="25" y="0" width="73" height="20" uuid="52a1152c-a947-4187-8715-211a5c80849d"/>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font fontName="Century Gothic" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Data]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="98" y="0" width="86" height="20" uuid="c2598e9f-33e3-4a62-8c70-72cfa4b32342"/>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font fontName="Century Gothic" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tipo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="269" y="0" width="72" height="20" uuid="c7b73262-86f4-4a37-88e7-c35ca2a099ed"/>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font fontName="Century Gothic" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Situação]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="341" y="0" width="57" height="20" uuid="3eb15358-2405-4564-835f-b0d68c24e55a"/>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font fontName="Century Gothic" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Valor]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="184" y="0" width="85" height="20" forecolor="#000000" backcolor="#000000" uuid="52290e59-d37e-4cfd-99f5-bdfd971a4b14"/>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font fontName="Century Gothic" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Equipamento]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="398" y="0" width="96" height="20" uuid="fe73bc14-fd67-44fe-bb7f-96e5fd4724ba"/>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font fontName="Century Gothic" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cliente]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="494" y="0" width="61" height="20" uuid="5f099b1c-a56c-4fd3-8f3c-843bf000b6f8"/>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font fontName="Century Gothic" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Telefone]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="25" height="20" uuid="ea900bf1-232a-420c-b9fc-17be99b9823d"/>
+				<textElement>
+					<font fontName="Arial" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{os}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="25" y="0" width="73" height="20" uuid="57e42d6d-974a-4ec1-9fcd-727b9435a5cd"/>
+				<textElement>
+					<font fontName="Arial" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{data_os}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="99" y="0" width="85" height="20" uuid="68e880c5-2de4-4dbb-9ac2-fcfc1eed1d62"/>
+				<textElement>
+					<font fontName="Arial" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tipo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="184" y="0" width="85" height="20" uuid="7467557e-1661-486c-ad8a-489d270b968b"/>
+				<textElement>
+					<font fontName="Arial" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{equipamento}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="269" y="0" width="72" height="20" uuid="54eb1b6b-1ad2-4939-87ad-3243035d0d1c"/>
+				<textElement>
+					<font fontName="Arial" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{situacao}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="341" y="0" width="57" height="20" uuid="c4eba703-7e45-4d37-8e51-77ed2cb0c604"/>
+				<textElement>
+					<font fontName="Arial" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{valor}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="398" y="0" width="96" height="20" uuid="ccd2524b-4afc-426a-9279-0ae40c9c9868"/>
+				<textElement>
+					<font fontName="Arial" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nomecli}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="494" y="0" width="61" height="20" uuid="84058616-ef9b-4c8a-9c54-8bf1d2cbebad"/>
+				<textElement>
+					<font fontName="Arial" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{fonecli}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="36" splitType="Stretch">
+			<textField>
+				<reportElement x="475" y="0" width="80" height="20" uuid="2e878428-5aa7-456d-bb34-db7f6549dc67"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="599" y="16" width="40" height="20" uuid="9623b648-1f67-44b2-8415-24523752159d"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

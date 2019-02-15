@@ -583,10 +583,19 @@ public class TelaCliente extends javax.swing.JInternalFrame implements Controlad
                     this.btnClienteCreate.setEnabled(true);
                 }
 
-            } catch (Exception e) {
-                JOptionPane.showMessageDialog(null, e);
+                    // Cliente com Ordem de serviço em aberto
+            } catch (com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException e) {
+                JOptionPane.showMessageDialog(null,"Cliente está com OS em aberto, Verifique.");
 
-            }
+            } catch (Exception e2) {
+                JOptionPane.showMessageDialog(null, e2);
+                
+
+            } 
+            
+            
+                
+            
 
         }
 
